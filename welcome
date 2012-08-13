@@ -1,0 +1,42 @@
+#!/bin/bash
+# Hey friends!  Here is a nifty little login script so you can open your
+# OS X terminal with style.  It was inspired by "archey" for linux.
+# This was written on Snow Leopard 10.6.8 - not tested with Lion or M Lion yet,
+# So let me know if it steezes with newer stuff.
+# To get the script to run at login, just move this script to any bin
+# and add the line "welcome" to your ~/.profile
+# You may have to chmod 777 it first, depending on how you got it.
+# Thanks, and message onlythefinestwilldo on reddit if you have any 
+# Love and / or tough love.
+# Peace
+# MCRISTO
+
+
+# Variables
+host=$(hostname | sed 's/.local//g')
+User=$(whoami)
+OS="OS X $(sw_vers -productVersion)"
+Shell="$SHELL"
+Disk=`df | head -2 | tail -1 | awk '{print $5}'`
+
+# Catch Phrase
+CATCH="I'll have what she's having."
+
+
+echo "
+                        
+                        ###
+                      ####
+                      ###
+             ####### ##  #######            User: $User
+           ######################           Hostname: $host
+          #####################             $OS
+          ####################              Kernel: $(uname)
+          ####################              Shell: /bin/bash
+          #####################             Disk: $Disk
+           ######################          
+            ####################
+              ################
+               ####     #####
+
+$CATCH"
