@@ -18,6 +18,7 @@ User=$(whoami)
 OS="OS X $(sw_vers -productVersion)"
 Shell="$SHELL"
 Disk=`df | head -2 | tail -1 | awk '{print $5}'`
+Brew_packages="`brew list -l | wc -l | awk '{print $1 }'`"
 
 # Catch Phrase
 CATCH="I'll have what she's having."
@@ -34,7 +35,7 @@ echo "
           ####################              Kernel: $(uname)
           ####################              Shell: $Shell
           #####################             Disk: $Disk
-           ######################          
+           ######################           Packages(brew): $Brew_packages
             ####################
               ################
                ####     #####
