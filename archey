@@ -8,10 +8,6 @@ Shell="$SHELL"
 Disk=`df | head -2 | tail -1 | awk '{print $5}'`
 Brew_packages="`brew list -l | wc -l | awk '{print $1 }'`"
 
-# Catch Phrase
-CATCH="I'll have what she's having."
-
-
 echo "
                         
                         ###
@@ -27,5 +23,5 @@ echo "
             ####################
               ################
                ####     #####
-
-$CATCH"
+               
+"
