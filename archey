@@ -2,24 +2,24 @@
 
 # Variables
 host=$(hostname | sed 's/.local//g')
-User=$(whoami)
+user=$(whoami)
 OS="OS X $(sw_vers -productVersion)"
-Shell="$SHELL"
-Disk=`df | head -2 | tail -1 | awk '{print $5}'`
-Brew_packages="`brew list -l | wc -l | awk '{print $1 }'`"
+shell="$SHELL"
+disk=`df | head -2 | tail -1 | awk '{print $5}'`
+brew_packages="`brew list -l | wc -l | awk '{print $1 }'`"
 
 echo "
                         
                         ###
                       ####
                       ###
-             ####### ##  #######            User: $User
+             ####### ##  #######            User: $user
            ######################           Hostname: $host
           #####################             $OS
           ####################              Kernel: $(uname)
-          ####################              Shell: $Shell
-          #####################             Disk: $Disk
-           ######################           Packages(brew): $Brew_packages
+          ####################              Shell: $shell
+          #####################             Disk: $disk
+           ######################           Packages(brew): $brew_packages
             ####################
               ################
                ####     #####
