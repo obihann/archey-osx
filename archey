@@ -5,23 +5,27 @@ host=$(hostname | sed 's/.local//g')
 user=$(whoami)
 OS="OS X $(sw_vers -productVersion)"
 shell="$SHELL"
+uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 disk=`df | head -2 | tail -1 | awk '{print $5}'`
+cpu=$(sysctl -n machdep.cpu.brand_string)
+mem=$(sysctl -n hw.memsize)
+gb="$((mem/1000000000)) GB"
 brew_packages="`brew list -l | wc -l | awk '{print $1 }'`"
 
 echo "
-                  
+
                   ###
                 ####
                 ###
-       ####### ##  #######            User: $user
+       ########    #######            User: $user
      ######################           Hostname: $host
     #####################             $OS
     ####################              Kernel: $(uname)
-    ####################              Shell: $shell
-    #####################             Disk: $disk
-     ######################           Packages(brew): $brew_packages
-      ####################
-        ################
-         ####     #####
-               
+    ####################              Uptime: $uptime
+    #####################             Shell: $shell
+     ######################           Disk: $disk
+      ####################            CPU: $cpu
+        ################              Memory: $gb
+         ####     #####               Packages(brew): $brew_packages
+
 "
