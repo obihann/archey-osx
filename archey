@@ -26,6 +26,6 @@ echo "
      ######################           Disk: $disk
       ####################            CPU: $cpu
         ################              Memory: $gb
-         ####     #####               Packages(brew): $brew_packages
+         ####     #####               Brew Packages: $brew_packages
 
 "
