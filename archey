@@ -1,31 +1,33 @@
 #!/bin/bash
 
 # Variables
-host=$(hostname | sed 's/.local//g')
 user=$(whoami)
-OS="OS X $(sw_vers -productVersion)"
-shell="$SHELL"
+hostname=$(hostname | sed 's/.local//g')
+distro="OS X $(sw_vers -productVersion)"
+kernel=$(uname)
 uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
-disk=`df | head -2 | tail -1 | awk '{print $5}'`
+shell="$SHELL"
+terminal="$TERM"
+packages="`brew list -l | wc -l | awk '{print $1 }'`"
 cpu=$(sysctl -n machdep.cpu.brand_string)
 mem=$(sysctl -n hw.memsize)
-gb="$((mem/1000000000)) GB"
-brew_packages="`brew list -l | wc -l | awk '{print $1 }'`"
+ram="$((mem/1000000000)) GB"
+disk=`df | head -2 | tail -1 | awk '{print $5}'`
 
 echo "
 
                   ###
-                ####
-                ###
-       ########    #######            User: $user
-     ######################           Hostname: $host
-    #####################             $OS
-    ####################              Kernel: $(uname)
-    ####################              Uptime: $uptime
-    #####################             Shell: $shell
-     ######################           Disk: $disk
-      ####################            CPU: $cpu
-        ################              Memory: $gb
-         ####     #####               Brew Packages: $brew_packages
+                ####                  User: $user
+                ###                   Hostname: $hostname
+       ########    #######            Distro: $distro
+     ######################           Kernel: $kernal
+    #####################             Uptime: $uptime
+    ####################              Shell: $shell
+    ####################              Terminal: $terminal
+    #####################             Brew Packages: $packages
+     ######################           CPU: $cpu
+      ####################            Memory: $ram
+        ################              Disk: $disk
+         ####     #####
 
 "
