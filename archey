@@ -20,7 +20,7 @@ echo "
                 ####                  User: $user
                 ###                   Hostname: $hostname
        ########    #######            Distro: $distro
-     ######################           Kernel: $kernal
+     ######################           Kernel: $kernel
     #####################             Uptime: $uptime
     ####################              Shell: $shell
     ####################              Terminal: $terminal
