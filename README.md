@@ -13,8 +13,8 @@ Installation
     $ sudo chmod +x /bin/archey 
     $ archey
 
- Configuration
- ------------
+Configuration
+------------
  	$ sudo vim /bin/archey
 
 Change the value of the variable color, to change the color. The options listed under #Colors
@@ -25,9 +25,11 @@ Change the value of the variable packagehandler, to change the package handler. 
 
 	packagehandler=$macportpackages
 
-Planned Features
+To-Do List
 ------------
 
+* Better Apple Logo
+* Better alignment
 * Classic Apple Logo (colors)
 
 
