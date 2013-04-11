@@ -8,26 +8,53 @@ kernel=$(uname)
 uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 shell="$SHELL"
 terminal="$TERM"
-packages="`brew list -l | wc -l | awk '{print $1 }'`"
+#brewpackages="`brew list -l | wc -l | awk '{print $1 }'`"
+macportpackages="`port installed | wc -l | awk '{print $1 }'`"
 cpu=$(sysctl -n machdep.cpu.brand_string)
 mem=$(sysctl -n hw.memsize)
 ram="$((mem/1000000000)) GB"
 disk=`df | head -2 | tail -1 | awk '{print $5}'`
 
+# Colors
+red="1"
+green="2"
+yellow="3"
+blue="4"
+purple="5"
+lightblue="6"
+grey="7"
+
+color=$(tput setaf $lightblue)
+normal=$(tput sgr0)
+
+packagehandler=$macportpackages
+
+userText="${color}User:${normal}"
+hostnameText="${color}Hostname:${normal}"
+distroText="${color}Distro:${normal}"
+kernelText="${color}Kernel:${normal}"
+uptimeText="${color}Uptime:${normal}"
+shellText="${color}Shell:${normal}"
+terminalText="${color}Hostname:${normal}"
+packagehandlerText="${color}Packages:${normal}"
+cpuText="${color}CPU:${normal}"
+memoryText="${color}Memory:${normal}"
+diskText="${color}Disk:${normal}"
+
 echo "
 
                   ###
-                ####                  User: $user
-                ###                   Hostname: $hostname
-       ########    #######            Distro: $distro
-     ######################           Kernel: $kernel
-    #####################             Uptime: $uptime
-    ####################              Shell: $shell
-    ####################              Terminal: $terminal
-    #####################             Brew Packages: $packages
-     ######################           CPU: $cpu
-      ####################            Memory: $ram
-        ################              Disk: $disk
+                ####                  $userText $user
+                ###                   $hostnameText $hostname
+       ########    #######            $distroText $distro
+     ######################           $kernelText $kernel
+    #####################             $uptimeText $uptime
+    ####################              $shellText $shell
+    ####################              $terminalText $terminal
+    #####################             $packagehandlerText $packagehandler
+     ######################           $cpuText $cpu
+      ####################            $memoryText $ram
+        ################              $diskText $disk
          ####     #####
 
 "
