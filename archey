@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Variables
+# System Variables
 user=$(whoami)
 hostname=$(hostname | sed 's/.local//g')
 distro="OS X $(sw_vers -productVersion)"
@@ -15,7 +15,7 @@ mem=$(sysctl -n hw.memsize)
 ram="$((mem/1000000000)) GB"
 disk=`df | head -2 | tail -1 | awk '{print $5}'`
 
-# Colors
+# Colors Variables
 red="1"
 green="2"
 yellow="3"
@@ -24,37 +24,50 @@ purple="5"
 lightblue="6"
 grey="7"
 
-color=$(tput setaf $lightblue)
+textColor=$(tput setaf $lightblue)
 normal=$(tput sgr0)
 
+# Package Manager (Homebrew or Macports)
 packagehandler=$macportpackages
 
-userText="${color}User:${normal}"
-hostnameText="${color}Hostname:${normal}"
-distroText="${color}Distro:${normal}"
-kernelText="${color}Kernel:${normal}"
-uptimeText="${color}Uptime:${normal}"
-shellText="${color}Shell:${normal}"
-terminalText="${color}Hostname:${normal}"
-packagehandlerText="${color}Packages:${normal}"
-cpuText="${color}CPU:${normal}"
-memoryText="${color}Memory:${normal}"
-diskText="${color}Disk:${normal}"
+# Add a -c option to enable classic color logo
+if [[ $1 == "-c" ]]; then
+  GREEN='\033[00;32m'
+  YELLOW='\033[00;33m'
+  LRED='\033[01;31m'
+  RED='\033[00;31m'
+  PURPLE='\033[00;35m'
+  CYAN='\033[00;36m'
+  BLUE='\033[00;34m'
+fi
 
-echo "
+# create colored text variables
+userText="${textColor}User:${normal}"
+hostnameText="${textColor}Hostname:${normal}"
+distroText="${textColor}Distro:${normal}"
+kernelText="${textColor}Kernel:${normal}"
+uptimeText="${textColor}Uptime:${normal}"
+shellText="${textColor}Shell:${normal}"
+terminalText="${textColor}Hostname:${normal}"
+packagehandlerText="${textColor}Packages:${normal}"
+cpuText="${textColor}CPU:${normal}"
+memoryText="${textColor}Memory:${normal}"
+diskText="${textColor}Disk:${normal}"
 
-                  ###
-                ####                  $userText $user
-                ###                   $hostnameText $hostname
-       ########    #######            $distroText $distro
-     ######################           $kernelText $kernel
-    #####################             $uptimeText $uptime
-    ####################              $shellText $shell
-    ####################              $terminalText $terminal
-    #####################             $packagehandlerText $packagehandler
-     ######################           $cpuText $cpu
-      ####################            $memoryText $ram
-        ################              $diskText $disk
-         ####     #####
-
+echo -e "
+                  
+${GREEN}                  ###
+${GREEN}                ####	              $userText $user
+${GREEN}                ###                   $hostnameText $hostname
+${GREEN}       ####### ##  #######            $distroText $distro
+${YELLOW}     ######################           $kernelText $kernel
+${YELLOW}    #####################             $uptimeText $uptime
+${LRED}    ####################              $shellText $shell
+${RED}    ####################              $terminalText $terminal
+${RED}    #####################             $packagehandlerText $packagehandler
+${PURPLE}     ######################           $cpuText $cpu
+${PURPLE}      ####################	      $memoryText $ram
+${BLUE}        ################              $diskText $disk
+${BLUE}         ####     ##### ${normal}
+               
 "
