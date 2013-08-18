@@ -31,7 +31,7 @@ normal=$(tput sgr0)
 packagehandler=$macportpackages
 
 # Add a -c option to enable classic color logo
-if [[ $1 == "-c" ]]; then
+if [[ $1 == "-c" ]] || [[ $1 == "--color" ]]; then
   GREEN='\033[00;32m'
   YELLOW='\033[00;33m'
   LRED='\033[01;31m'
