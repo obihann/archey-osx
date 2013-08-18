@@ -16,7 +16,7 @@ Installation
 
 Options
 ------------
-	-c 
+	-c,  --color
 		Color Logo
 		
 
