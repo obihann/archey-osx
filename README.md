@@ -11,7 +11,12 @@ Installation
     $ cd archey-osx/
     $ sudo cp archey /bin/archey
     $ sudo chmod +x /bin/archey 
-    $ archey
+    $ archey	
+
+
+Options
+------------
+
 
 Configuration
 ------------
