@@ -3,7 +3,9 @@ Archey for OS X
 
 An archey script for OS X.
 
-!['Screenshot'](https://raw.github.com/Gary00/archey-osx/master/screenshot.png)
+!['Screenshot'](https://raw.github.com/Gary00/archey-osx/master/screenshot_normal.png)
+!['Screenshot'](https://raw.github.com/Gary00/archey-osx/master/screenshot_color.png)
+
 
 Installation
 ------------
