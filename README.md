@@ -35,9 +35,8 @@ Change the value of the variable packagehandler, to change the package handler. 
 To-Do List
 ------------
 
-* Better Apple Logo
-* Better alignment
-* Classic Apple Logo (colors)
+* Loop for assigning color variables (smaller code)
+
 
 
 Thanks
