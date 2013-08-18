@@ -16,6 +16,8 @@ Installation
 
 Options
 ------------
+-c 
+ Add color Logo
 
 
 Configuration
