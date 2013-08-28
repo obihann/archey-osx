@@ -43,6 +43,8 @@ fi
 
 # create colored text variables
 userText="${textColor}User:${normal}"
+
+
 hostnameText="${textColor}Hostname:${normal}"
 distroText="${textColor}Distro:${normal}"
 kernelText="${textColor}Kernel:${normal}"
