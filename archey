@@ -57,9 +57,9 @@ diskText="${textColor}Disk:${normal}"
 
 echo -e "
                   
-${GREEN}                  ###
-${GREEN}                ####	              $userText $user
-${GREEN}                ###                   $hostnameText $hostname
+${GREEN}                 ###
+${GREEN}               ####	              $userText $user
+${GREEN}               ###                    $hostnameText $hostname
 ${GREEN}       #######    #######             $distroText $distro
 ${YELLOW}     ######################           $kernelText $kernel
 ${YELLOW}    #####################             $uptimeText $uptime
