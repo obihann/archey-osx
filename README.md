@@ -39,6 +39,8 @@ To-Do List
 
 * Loop for assigning color variables (smaller code)
 * Better way to install (don't dump straight into /bin , maybe install script?)
+* Update Screenshots
+* Look into logo allignment in code (match what is dispalyed)
 
 Thanks
 ------
