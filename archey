@@ -11,6 +11,11 @@ terminal="$TERM"
 #brewpackages="`brew list -l | wc -l | awk '{print $1 }'`"
 macportpackages="`port installed | wc -l | awk '{print $1 }'`"
 cpu=$(sysctl -n machdep.cpu.brand_string)
+
+# removes (R) and (TM) from the CPU name so it fits in a standard 80 window
+
+cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
+
 mem=$(sysctl -n hw.memsize)
 ram="$((mem/1000000000)) GB"
 disk=`df | head -2 | tail -1 | awk '{print $5}'`
@@ -66,7 +71,7 @@ ${YELLOW}    #####################             $uptimeText $uptime
 ${LRED}    ####################              $shellText $shell
 ${RED}    ####################              $terminalText $terminal
 ${RED}    #####################             $packagehandlerText $packagehandler
-${PURPLE}     ######################           $cpuText $cpu
+${PURPLE}     ######################           $cpuText $cpu 
 ${PURPLE}      ####################	      $memoryText $ram
 ${BLUE}        ################              $diskText $disk
 ${BLUE}         ####     ##### ${normal}
