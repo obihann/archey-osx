@@ -14,7 +14,7 @@ cpu=$(sysctl -n machdep.cpu.brand_string)
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
 
-cpu=$(echo "$cpu" | awk '$1=$1' | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
+cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
 
 mem=$(sysctl -n hw.memsize)
 ram="$((mem/1000000000)) GB"
