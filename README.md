@@ -41,6 +41,7 @@ To-Do List
 * Better way to install (don't dump straight into /bin , maybe install script?)
 * Update Screenshots
 * Look into logo allignment in code (match what is dispalyed)
+* Better way of choosing package manager (maybe as option rather then config?) 
 
 Thanks
 ------
