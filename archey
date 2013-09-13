@@ -8,8 +8,7 @@ kernel=$(uname)
 uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 shell="$SHELL"
 terminal="$TERM"
-#brewpackages="`brew list -l | wc -l | awk '{print $1 }'`"
-macportpackages="`port installed | wc -l | awk '{print $1 }'`"
+brewpackages="`brew list -l | wc -l | awk '{print $1 }'`"
 cpu=$(sysctl -n machdep.cpu.brand_string)
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
@@ -33,7 +32,7 @@ textColor=$(tput setaf $lightblue)
 normal=$(tput sgr0)
 
 # Package Manager (Homebrew or Macports)
-packagehandler=$macportpackages
+packagehandler=$brewpackages
 
 # Add a -c option to enable classic color logo
 if [[ $1 == "-c" ]] || [[ $1 == "--color" ]]; then
@@ -55,13 +54,13 @@ kernelText="${textColor}Kernel:${normal}"
 uptimeText="${textColor}Uptime:${normal}"
 shellText="${textColor}Shell:${normal}"
 terminalText="${textColor}Terminal:${normal}"
-packagehandlerText="${textColor}Packages:${normal}"
+packagehandlerText="${textColor}Packages (brew):${normal}"
 cpuText="${textColor}CPU:${normal}"
 memoryText="${textColor}Memory:${normal}"
 diskText="${textColor}Disk:${normal}"
 
 echo -e "
-                  
+
 ${GREEN}                 ###
 ${GREEN}               ####	              $userText $user
 ${GREEN}               ###                    $hostnameText $hostname
@@ -71,9 +70,9 @@ ${YELLOW}    #####################             $uptimeText $uptime
 ${LRED}    ####################              $shellText $shell
 ${RED}    ####################              $terminalText $terminal
 ${RED}    #####################             $packagehandlerText $packagehandler
-${PURPLE}     ######################           $cpuText $cpu 
+${PURPLE}     ######################           $cpuText $cpu
 ${PURPLE}      ####################	      $memoryText $ram
 ${BLUE}        ################              $diskText $disk
 ${BLUE}         ####     ##### ${normal}
-               
+
 "
