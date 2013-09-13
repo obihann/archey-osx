@@ -8,8 +8,8 @@ kernel=$(uname)
 uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 shell="$SHELL"
 terminal="$TERM"
-brewpackages="`brew list -l | wc -l | awk '{print $1 }'`"
 cpu=$(sysctl -n machdep.cpu.brand_string)
+packagehandler=""
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
 
@@ -31,11 +31,8 @@ grey="7"
 textColor=$(tput setaf $lightblue)
 normal=$(tput sgr0)
 
-# Package Manager (Homebrew or Macports)
-packagehandler=$brewpackages
-
 # Add a -c option to enable classic color logo
-if [[ $1 == "-c" ]] || [[ $1 == "--color" ]]; then
+if [[ $1 == "-c" ]] || [[ $1 == "--color" ]] || [[ $2 == "-c" ]] || [[ $2 == "--color" ]]; then
   GREEN='\033[00;32m'
   YELLOW='\033[00;33m'
   LRED='\033[01;31m'
@@ -43,6 +40,14 @@ if [[ $1 == "-c" ]] || [[ $1 == "--color" ]]; then
   PURPLE='\033[00;35m'
   CYAN='\033[00;36m'
   BLUE='\033[00;34m'
+fi
+
+# Add a -m command to switch to macports or default to brew
+if [[ $1 == "-m" ]] || [[ $1 == "--macports" ]] || [[ $2 == "-m" ]] || [[ $2 == "--macports" ]]
+then
+  packagehandler="`brew list -l | wc -l | awk '{print $1 }'`"
+else
+  packagehandler="`port installed | wc -l | awk '{print $1 }'`"
 fi
 
 userText="${textColor}User:${normal}"
@@ -54,7 +59,7 @@ kernelText="${textColor}Kernel:${normal}"
 uptimeText="${textColor}Uptime:${normal}"
 shellText="${textColor}Shell:${normal}"
 terminalText="${textColor}Terminal:${normal}"
-packagehandlerText="${textColor}Packages (brew):${normal}"
+packagehandlerText="${textColor}Packages:${normal}"
 cpuText="${textColor}CPU:${normal}"
 memoryText="${textColor}Memory:${normal}"
 diskText="${textColor}Disk:${normal}"
