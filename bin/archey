@@ -45,9 +45,9 @@ fi
 # Add a -m command to switch to macports or default to brew
 if [[ $1 == "-m" ]] || [[ $1 == "--macports" ]] || [[ $2 == "-m" ]] || [[ $2 == "--macports" ]]
 then
-  packagehandler="`brew list -l | wc -l | awk '{print $1 }'`"
-else
   packagehandler="`port installed | wc -l | awk '{print $1 }'`"
+else
+  packagehandler="`brew list -l | wc -l | awk '{print $1 }'`"
 fi
 
 userText="${textColor}User:${normal}"
