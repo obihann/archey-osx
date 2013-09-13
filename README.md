@@ -1,5 +1,5 @@
 #Archey for OS X
-| An archey script for OS X.
+An archey script for OS X.
 
 ```
 
