@@ -26,7 +26,7 @@ An archey script for OS X.
 * [License](#license)
 
 ##Download
-The latest stable release is [1.0](https://github.com/obihann/archey-osx/archive/1.1.tar.gz).
+The latest stable release is [1.1](https://github.com/obihann/archey-osx/archive/1.1.tar.gz).
 
 SHA1: 52da445c38c08415caa8ba93d28bbfe7b4ac1003
 
