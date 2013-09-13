@@ -19,10 +19,16 @@
 ```
 
 ##Table Of Contents
+* [Download](#download)
 * [Installation](#installation)
 * [Options](#options)
 * [Credits](#credits)
 * [License](#license)
+
+##Download
+The latest stable release is [1.0]https://github.com/obihann/archey-osx/archive/1.0.tar.gz).
+
+SHA1: 921c82fb271da83b16d3afabafc5876ead2c7264
 
 ##Installation
 To get started you will need [homebrew](http://brew.sh/) to manage packages such as Python, figlet, and cowsay. To install please run the following command:
