@@ -1,49 +1,56 @@
-Archey for OS X
-===============
-
+#Archey for OS X
 An archey script for OS X.
 
-!['Screenshot'](https://raw.github.com/Gary00/archey-osx/master/screenshot_normal.png)
-!['Screenshot'](https://raw.github.com/Gary00/archey-osx/master/screenshot_color.png)
+```
 
+                 ###
+               ####	                  User: jhann
+               ###                    Hostname: Hann
+       #######    #######             Distro: OS X 10.8.4
+     ######################           Kernel: Darwin
+    #####################             Uptime:  2:03
+    ####################              Shell: /bin/bash
+    ####################              Terminal: xterm
+    #####################             Packages: 70
+     ######################           CPU: Intel Core i5-3210M CPU @ 2.50GHz
+      ####################	          Memory: 8 GB
+        ################              Disk: 56%
+         ####     #####
+```
 
-Installation
+##Table Of Contents
+* [Download](#download)
+* [Installation](#installation)
+* [Options](#options)
+* [Credits](#credits)
+* [License](#license)
+
+##Download
+The latest stable release is [1.0]https://github.com/obihann/archey-osx/archive/1.0.tar.gz).
+
+SHA1: 921c82fb271da83b16d3afabafc5876ead2c7264
+
+##Installation
+To get started you will need [homebrew](http://brew.sh/) to manage packages such as Python, figlet, and cowsay. To install please run the following command:
+
+```
+brew install archey
+```
+
+##Options
 ------------
-    $ git clone git@github.com:Gary00/archey-osx.git
-    $ cd archey-osx/
-    $ sudo cp archey /bin/archey
-    $ sudo chmod +x /bin/archey 
-    $ archey	
+* -c,  --color : Color Logo
+* -m,  --macports : Use macports instead of brew to display package count
 
 
-Options
-------------
-	-c,  --color
-		Color Logo
-		
 
-Configuration
-------------
- 	$ sudo vim /bin/archey
-
-Change the value of the variable color, to change the color. The options listed under #Colors
-
-	color=$(tput setaf $lightblue)
-
-Change the value of the variable packagehandler, to change the package handler. The options are listed under # Variables
-
-	packagehandler=$macportpackages
-
-To-Do List
-------------
-
-* Loop for assigning color variables (smaller code)
-* Better way to install (don't dump straight into /bin , maybe install script?)
-* Update Screenshots
-* Look into logo allignment in code (match what is dispalyed)
-* Better way of choosing package manager (maybe as option rather then config?) 
-
-Thanks
+##Credits
 ------
-Thanks to the original developer of of Archey, [djmelik](https://github.com/djmelik/archey).
-And to [joshfinnie](https://github.com/joshfinnie/archey-osx) for is good osx implementation.  
+* [djmelik](https://github.com/djmelik/archey) - Archey
+* [joshfinnie](https://github.com/joshfinnie/archey-osx) - A great OSX Python port of Archey
+* [Gary00](https://github.com/Gary00/archey-osx) - A fork of joshfinnie's Archey port, and the base of this script.
+
+##License
+This tool is protected by the [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html).
+
+Copyright [Jeffrey Hann](http://jeffreyhann.ca/) 2013
