@@ -26,7 +26,7 @@ An archey script for OS X.
 * [License](#license)
 
 ##Download
-The latest stable release is [1.1](https://github.com/obihann/archey-osx/archive/1.1.tar.gz).
+The latest stable release is [1.2](https://github.com/obihann/archey-osx/archive/1.2.tar.gz).
 
 SHA1: 52da445c38c08415caa8ba93d28bbfe7b4ac1003
 
@@ -49,6 +49,7 @@ brew install archey
 * [djmelik](https://github.com/djmelik/archey) - Archey
 * [joshfinnie](https://github.com/joshfinnie/archey-osx) - A great OSX Python port of Archey
 * [Gary00](https://github.com/Gary00/archey-osx) - A fork of joshfinnie's Archey port, and the base of this script.
+* [rdlugosz](https://github.com/rdlugosz) - Fixing a math error with memory caculations.
 
 ##License
 This tool is protected by the [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html).
