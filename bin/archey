@@ -67,7 +67,7 @@ diskText="${textColor}Disk:${normal}"
 echo -e "
 
 ${GREEN}                 ###
-${GREEN}               ####	              $userText $user
+${GREEN}               ####                   $userText $user
 ${GREEN}               ###                    $hostnameText $hostname
 ${GREEN}       #######    #######             $distroText $distro
 ${YELLOW}     ######################           $kernelText $kernel
@@ -76,7 +76,7 @@ ${LRED}    ####################              $shellText $shell
 ${RED}    ####################              $terminalText $terminal
 ${RED}    #####################             $packagehandlerText $packagehandler
 ${PURPLE}     ######################           $cpuText $cpu
-${PURPLE}      ####################	      $memoryText $ram
+${PURPLE}      ####################            $memoryText $ram
 ${BLUE}        ################              $diskText $disk
 ${BLUE}         ####     ##### ${normal}
 
