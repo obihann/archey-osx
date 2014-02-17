@@ -26,9 +26,9 @@ An archey script for OS X.
 * [License](#license)
 
 ##Download
-The latest stable release is [1.2](https://github.com/obihann/archey-osx/archive/1.2.tar.gz).
+The latest stable release is [1.3](https://github.com/obihann/archey-osx/archive/1.3.tar.gz).
 
-SHA1: 52da445c38c08415caa8ba93d28bbfe7b4ac1003
+SHA1: 846d2cdc9922b5e8566ff00b71aa457dacf2f87e
 
 ##Installation
 To get started you will need [homebrew](http://brew.sh/) to manage packages such as Python, figlet, and cowsay. To install please run the following command:
