@@ -2,9 +2,8 @@ require 'formula'
 
 class Archey < Formula
   homepage 'http://obihann.github.io/archey-osx/'
-  url 'https://github.com/obihann/archey-osx/archive/1.2.tar.gz'
-  sha1 '52da445c38c08415caa8ba93d28bbfe7b4ac1003'
-  version "1.2"
+  url 'https://github.com/obihann/archey-osx/archive/1.3.tar.gz'
+  sha1 '846d2cdc9922b5e8566ff00b71aa457dacf2f87e'
 
   def install
     bin.install 'bin/archey'
