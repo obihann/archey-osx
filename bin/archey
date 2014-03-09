@@ -51,8 +51,6 @@ else
 fi
 
 userText="${textColor}User:${normal}"
-
-
 hostnameText="${textColor}Hostname:${normal}"
 distroText="${textColor}Distro:${normal}"
 kernelText="${textColor}Kernel:${normal}"
@@ -72,7 +70,7 @@ ${GREEN}               ###                    $hostnameText $hostname
 ${GREEN}       #######    #######             $distroText $distro
 ${YELLOW}     ######################           $kernelText $kernel
 ${YELLOW}    #####################             $uptimeText $uptime
-${LRED}    ####################              $shellText $shell
+${RED}    ####################              $shellText $shell
 ${RED}    ####################              $terminalText $terminal
 ${RED}    #####################             $packagehandlerText $packagehandler
 ${PURPLE}     ######################           $cpuText $cpu
