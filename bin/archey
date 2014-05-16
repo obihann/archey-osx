@@ -1,5 +1,46 @@
 #!/bin/bash
 
+# Detect the packager.
+if [ -x /usr/local/bin/brew ]; then
+  packager=homebrew
+elif command -v port >/dev/null; then
+  packager=macports
+else
+  packager=none
+fi
+
+# Get the command line options
+opt_nocolor=f
+opt_force_color=f
+for arg in "$@"
+do
+  case "${arg}" in
+    -m|--macports)
+      packager=macports
+      ;;
+    -b|--nocolor)
+      opt_nocolor=t
+      ;;
+    -c|--color)
+      opt_nocolor=f
+      opt_force_color=t
+      ;;
+    -h|--help)
+      echo "Usage: $0 [options]"
+      echo
+      echo "  -m --macports Use MacPorts as package system (default packager: ${packager})."
+      echo "  -b --nocolor  Turn color off."
+      echo "  -c --color    Force the color on (overrides --nocolor)."
+      exit 0
+      ;;
+    *)
+      echo "Unknown argument: $1" 1>&2
+      echo "For help, use: $0 --help" 1>&2
+      exit 1
+      ;;
+  esac
+done
+
 # System Variables
 user=$(whoami)
 hostname=$(hostname | sed 's/.local//g')
@@ -10,45 +51,40 @@ uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 shell=$(dscl . -read /Users/$user UserShell | awk '{print $2}')
 terminal="$TERM"
 cpu=$(sysctl -n machdep.cpu.brand_string)
-packagehandler=""
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
-
 cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
 
 ram="$(( $(sysctl -n hw.memsize) / 1024 ** 3  )) GB"
 disk=`df | head -2 | tail -1 | awk '{print $5}'`
 
-# Colors Variables
-red="1"
-green="2"
-yellow="3"
-blue="4"
-purple="5"
-lightblue="6"
-grey="7"
 
-textColor=$(tput setaf $lightblue)
-normal=$(tput sgr0)
-
-# Add a -c option to enable classic color logo
-if [[ $1 == "-c" ]] || [[ $1 == "--color" ]] || [[ $2 == "-c" ]] || [[ $2 == "--color" ]]; then
-  GREEN='\033[00;32m'
-  YELLOW='\033[00;33m'
-  LRED='\033[01;31m'
-  RED='\033[00;31m'
-  PURPLE='\033[00;35m'
-  CYAN='\033[00;36m'
-  BLUE='\033[00;34m'
-fi
-
-# Add a -m command to switch to macports or default to brew
-if [[ $1 == "-m" ]] || [[ $1 == "--macports" ]] || [[ $2 == "-m" ]] || [[ $2 == "--macports" ]]
+# Set up colors if:
+# * stdout is a tty
+# * the user hasn't turned it off
+# * or if we're forcing color
+if [[ ( -t 1  && "${opt_nocolor}" = f) || "${opt_force_color}" = t ]]
 then
-  packagehandler="`port installed | wc -l | awk '{print $1 }'`"
-else
-  packagehandler="`brew list -l | wc -l | awk '{print $1 }'`"
+  RED=$(tput       setaf 1 2>/dev/null)
+  GREEN=$(tput     setaf 2 2>/dev/null)
+  YELLOW=$(tput    setaf 3 2>/dev/null)
+  BLUE=$(tput      setaf 4 2>/dev/null)
+  PURPLE=$(tput    setaf 5 2>/dev/null)
+  textColor=$(tput setaf 6 2>/dev/null)
+  normal=$(tput    sgr0 2>/dev/null)
 fi
+
+case "${packager}" in
+  homebrew)
+    packagehandler=$(brew list -l | wc -l | awk '{print $1 }')
+    ;;
+  macports)
+    packagehandler=$(port installed | wc -l | awk '{print $1 }')
+    ;;
+  *)
+    packagehandler=0
+    ;;
+esac
 
 userText="${textColor}User:${normal}"
 hostnameText="${textColor}Hostname:${normal}"
@@ -63,20 +99,22 @@ cpuText="${textColor}CPU:${normal}"
 memoryText="${textColor}Memory:${normal}"
 diskText="${textColor}Disk:${normal}"
 
+# The ${foo#  } is a cheat so that it lines up here as well
+# as when run.
 echo -e "
 
-${GREEN}                 ###
-${GREEN}               ####                   $userText $user
-${GREEN}               ###                    $hostnameText $hostname
-${GREEN}       #######    #######             $distroText $distro
-${YELLOW}     ######################           $kernelText $kernel
-${YELLOW}    #####################             $uptimeText $uptime
-${RED}    ####################              $shellText $shell
-${RED}    ####################              $terminalText $terminal
-${RED}    #####################             $packagehandlerText $packagehandler
-${PURPLE}     ######################           $cpuText $cpu
-${PURPLE}      ####################            $memoryText $ram
-${BLUE}        ################              $diskText $disk
-${BLUE}         ####     #####               $ipText $ip${normal}
+${GREEN#  }                 ###
+${GREEN#  }               ####                   $userText $user
+${GREEN#  }               ###                    $hostnameText $hostname
+${GREEN#  }       #######    #######             $distroText $distro
+${YELLOW# }     ######################           $kernelText $kernel
+${YELLOW# }    #####################             $uptimeText $uptime
+${RED#    }    ####################              $shellText $shell
+${RED#    }    ####################              $terminalText $terminal
+${RED#    }    #####################             $packagehandlerText $packagehandler
+${PURPLE# }     ######################           $cpuText $cpu
+${PURPLE# }      ####################            $memoryText $ram
+${BLUE#   }        ################              $diskText $disk
+${BLUE#   }         ####     #####               $ipText $ip${normal}
 
 "

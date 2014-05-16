@@ -37,9 +37,10 @@ brew install archey
 
 ##Options
 ------------
-* -c,  --color : Color Logo
-* -m,  --macports : Use macports instead of brew to display package count
-
+* -b,  --nocolor : Use black & white logo
+* -c,  --color   : Force using a color Logo
+* -m,  --macports : Use MacPorts instead of Homebrew to display package count
+* -h,  --help : Show help
 
 
 ##Credits
