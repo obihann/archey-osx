@@ -78,6 +78,6 @@ ${RED}    #####################             $packagehandlerText $packagehandler
 ${PURPLE}     ######################           $cpuText $cpu
 ${PURPLE}      ####################            $memoryText $ram
 ${BLUE}        ################              $diskText $disk
-${BLUE}         ####     ##### 	      $ipText $ip
+${BLUE}         ####     #####${normal} 	      $ipText $ip
 
 "
