@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Gets the *default* ip address only.
+function default_ip
+{
+  /usr/bin/ruby -e '
+  require "socket"
+
+  Socket.do_not_reverse_lookup = true
+
+  UDPSocket.open { |s| s.connect("64.233.187.99", 1); puts s.addr.last }
+  '
+}
+
 # Detect the packager.
 if [ -x /usr/local/bin/brew ]; then
   packager=homebrew
@@ -44,7 +56,7 @@ done
 # System Variables
 user=$(whoami)
 hostname=$(hostname | sed 's/.local//g')
-ip=$(ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2)
+ip=$(default_ip)
 distro="OS X $(sw_vers -productVersion)"
 kernel=$(uname)
 uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
