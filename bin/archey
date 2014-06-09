@@ -68,7 +68,7 @@ cpu=$(sysctl -n machdep.cpu.brand_string)
 cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
 
 ram="$(( $(sysctl -n hw.memsize) / 1024 ** 3  )) GB"
-disk=`df | head -2 | tail -1 | awk '{print $5}'`
+disk=$(df | head -2 | tail -1 | awk '{print $5}')
 
 
 # Set up colors if:
