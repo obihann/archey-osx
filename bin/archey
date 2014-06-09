@@ -16,8 +16,7 @@ packagehandler=""
 
 cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
 
-mem=$(sysctl -n hw.memsize)
-ram="$((mem/1073741824)) GB"
+ram="$(( $(sysctl -n hw.memsize) / 1024 ** 3  )) GB"
 disk=`df | head -2 | tail -1 | awk '{print $5}'`
 
 # Colors Variables
