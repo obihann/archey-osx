@@ -49,6 +49,7 @@ brew install archey
 * [joshfinnie](https://github.com/joshfinnie/archey-osx) - A great OSX Python port of Archey
 * [Gary00](https://github.com/Gary00/archey-osx) - A fork of joshfinnie's Archey port, and the base of this script.
 * [rdlugosz](https://github.com/rdlugosz) - Fixing a math error with memory caculations.
+* [docwhat](https://github.com/docwhat) - Shell expertise and cleanups.
 
 ##License
 This tool is protected by the [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html).
