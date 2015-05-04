@@ -48,7 +48,7 @@ ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 distro="OS X $(sw_vers -productVersion)"
 kernel=$(uname)
 uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
-shell=$(dscl . -read /Users/$user UserShell | awk '{print $2}')
+shell="$SHELL"
 terminal="$TERM ${TERM_PROGRAM//_/ }"
 cpu=$(sysctl -n machdep.cpu.brand_string)
 
