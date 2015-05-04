@@ -49,7 +49,7 @@ distro="OS X $(sw_vers -productVersion)"
 kernel=$(uname)
 uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 shell=$(dscl . -read /Users/$user UserShell | awk '{print $2}')
-terminal="$TERM"
+terminal="$TERM ${TERM_PROGRAM//_/ }"
 cpu=$(sysctl -n machdep.cpu.brand_string)
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
