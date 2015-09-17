@@ -4,7 +4,7 @@ An archey script for OS X.
 ```
 
                  ###
-               ####	                  User: jhann
+               ####                   User: jhann
                ###                    Hostname: Hann
        #######    #######             Distro: OS X 10.8.4
      ######################           Kernel: Darwin
@@ -13,7 +13,7 @@ An archey script for OS X.
     ####################              Terminal: xterm
     #####################             Packages: 70
      ######################           CPU: Intel Core i5-3210M CPU @ 2.50GHz
-      ####################	          Memory: 8 GB
+      ####################            Memory: 8 GB
         ################              Disk: 56%
          ####     #####               IP Address: 192.168.0.2
 ```
