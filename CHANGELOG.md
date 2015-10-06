@@ -1,8 +1,8 @@
 # Change Log
 
-## [Unreleased](https://github.com/obihann/archey-osx/tree/HEAD)
+## [v1.5](https://github.com/obihann/archey-osx/tree/v1.5) (2015-10-06)
 
-[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.4...HEAD)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.4...v1.5)
 
 **Merged pull requests:**
 
