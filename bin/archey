@@ -101,9 +101,10 @@ memoryText="${textColor}Memory:${normal} ${ram}${normal}"
 diskText="${textColor}Disk:${normal} ${disk}${normal}"
 batteryText="${textColor}Battery:${normal} ${battery}${normal}"
 
-if [ -a "${HOME}/.config/archey-logo" ]
+logofile=${ARCHEY_LOGO_FILE:-"${HOME}/.config/archey-logo"}
+if [ -a "$logofile" ]
   then
-  source "${HOME}/.config/archey-logo"
+  source "$logofile"
 else
 # The ${foo#  } is a cheat so that it lines up here as well
 # as when run.
