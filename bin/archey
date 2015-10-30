@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# test to see if bash supports arrays
+arraytest[0]='test' || (echo 'Error: Arrays are not supported in this version of
+bash.' && exit 2)
+
 # Detect the packager.
 if [ -x /usr/local/bin/brew ]; then
   packager=homebrew
@@ -96,21 +100,21 @@ case "${packager}" in
     ;;
 esac
 
-userText="${textColor}User:${normal} ${user}${normal}"
-hostnameText="${textColor}Hostname:${normal} ${hostname}${normal}"
-distroText="${textColor}Distro:${normal} ${distro}${normal}"
-kernelText="${textColor}Kernel:${normal} ${kernel}${normal}"
-uptimeText="${textColor}Uptime:${normal} ${uptime}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}User:${normal} ${user}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Hostname:${normal} ${hostname}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Distro:${normal} ${distro}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Kernel:${normal} ${kernel}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Uptime:${normal} ${uptime}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Shell:${normal} ${shell}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Terminal:${normal} ${terminal}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Packages:${normal} ${packagehandler}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}CPU:${normal} ${cpu}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Memory:${normal} ${ram}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Disk:${normal} ${disk}${normal}"
+fieldlist[${#fieldlist[@]}]="${textColor}Battery:${normal} ${battery}${normal}"
 if [ "${opt_offline}" = f ]; then
-    ipText="${textColor}IP Address:${normal} ${ip}${normal}"
+    fieldlist[${#fieldlist[@]}]="${textColor}IP Address:${normal} ${ip}${normal}"
 fi
-shellText="${textColor}Shell:${normal} ${shell}${normal}"
-terminalText="${textColor}Terminal:${normal} ${terminal}${normal}"
-packagehandlerText="${textColor}Packages:${normal} ${packagehandler}${normal}"
-cpuText="${textColor}CPU:${normal} ${cpu}${normal}"
-memoryText="${textColor}Memory:${normal} ${ram}${normal}"
-diskText="${textColor}Disk:${normal} ${disk}${normal}"
-batteryText="${textColor}Battery:${normal} ${battery}${normal}"
 
 if [ -a "${HOME}/.config/archey-logo" ]
   then
@@ -119,19 +123,19 @@ else
 # The ${foo#  } is a cheat so that it lines up here as well
 # as when run.
   echo -e "
-${GREEN#  }                 ###                  $userText
-${GREEN#  }               ####                   $hostnameText
-${GREEN#  }               ###                    $distroText
-${GREEN#  }       #######    #######             $kernelText
-${YELLOW# }     ######################           $uptimeText
-${YELLOW# }    #####################             $shellText
-${RED#    }    ####################              $terminalText
-${RED#    }    ####################              $packagehandlerText
-${RED#    }    #####################             $cpuText
-${PURPLE# }     ######################           $memoryText
-${PURPLE# }      ####################            $diskText
-${BLUE#   }        ################              $batteryText
-${BLUE#   }         ####     #####               $ipText
+${GREEN#  }                 ###                  ${fieldlist[0]}
+${GREEN#  }               ####                   ${fieldlist[1]}
+${GREEN#  }               ###                    ${fieldlist[2]}
+${GREEN#  }       #######    #######             ${fieldlist[3]}
+${YELLOW# }     ######################           ${fieldlist[4]}
+${YELLOW# }    #####################             ${fieldlist[5]}
+${RED#    }    ####################              ${fieldlist[6]}
+${RED#    }    ####################              ${fieldlist[7]}
+${RED#    }    #####################             ${fieldlist[8]}
+${PURPLE# }     ######################           ${fieldlist[9]}
+${PURPLE# }      ####################            ${fieldlist[10]}
+${BLUE#   }        ################              ${fieldlist[11]}
+${BLUE#   }         ####     #####               ${fieldlist[12]}
 ${normal}
 "
 fi
