@@ -1,11 +1,26 @@
 # Change Log
 
-## [v1.5](https://github.com/obihann/archey-osx/tree/v1.5) (2015-10-06)
+## [Unreleased](https://github.com/obihann/archey-osx/tree/HEAD)
 
+[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.5...HEAD)
+
+**Fixed bugs:**
+
+- Why my uptime string length is so long? [\#18](https://github.com/obihann/archey-osx/issues/18)
+
+**Merged pull requests:**
+
+- Adding offline mode [\#25](https://github.com/obihann/archey-osx/pull/25) ([obihann](https://github.com/obihann))
+- Fixing uptime [\#24](https://github.com/obihann/archey-osx/pull/24) ([obihann](https://github.com/obihann))
+- Configure logo file location via $ARCHEY\_LOGO\_FILE [\#22](https://github.com/obihann/archey-osx/pull/22) ([theunraveler](https://github.com/theunraveler))
+- updating the regex used to display uptime [\#21](https://github.com/obihann/archey-osx/pull/21) ([obihann](https://github.com/obihann))
+
+## [v1.5](https://github.com/obihann/archey-osx/tree/v1.5) (2015-10-06)
 [Full Changelog](https://github.com/obihann/archey-osx/compare/v1.4...v1.5)
 
 **Merged pull requests:**
 
+- adding changelog [\#16](https://github.com/obihann/archey-osx/pull/16) ([obihann](https://github.com/obihann))
 - Added custom logo functionality. [\#15](https://github.com/obihann/archey-osx/pull/15) ([vladshub](https://github.com/vladshub))
 - Fix uptime whitespace [\#13](https://github.com/obihann/archey-osx/pull/13) ([zx8](https://github.com/zx8))
 - Performance :\) [\#12](https://github.com/obihann/archey-osx/pull/12) ([lindskogen](https://github.com/lindskogen))
