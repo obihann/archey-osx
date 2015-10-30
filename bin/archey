@@ -12,6 +12,7 @@ fi
 # Get the command line options
 opt_nocolor=f
 opt_force_color=f
+opt_offline=f
 for arg in "$@"
 do
   case "${arg}" in
@@ -25,12 +26,16 @@ do
       opt_nocolor=f
       opt_force_color=t
       ;;
+    -o|--offline)
+        opt_offline=t
+      ;;
     -h|--help)
       echo "Usage: $0 [options]"
       echo
-      echo "  -m --macports Use MacPorts as package system (default packager: ${packager})."
-      echo "  -b --nocolor  Turn color off."
-      echo "  -c --color    Force the color on (overrides --nocolor)."
+      echo "  -m --macports  Use MacPorts as package system (default packager: ${packager})."
+      echo "  -b --nocolor   Turn color off."
+      echo "  -c --color     Force the color on (overrides --nocolor)."
+      echo "  -o --offline Disable the IP address check."
       exit 0
       ;;
     *)
@@ -44,7 +49,11 @@ done
 # System Variables
 user=$(whoami)
 hostname=$(hostname | sed 's/.local//g')
-ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+
+if [[ "${opt_offline}" = f ]]; then
+    ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+fi
+
 distro="OS X $(sw_vers -productVersion)"
 kernel=$(uname)
 uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
@@ -92,7 +101,9 @@ hostnameText="${textColor}Hostname:${normal} ${hostname}${normal}"
 distroText="${textColor}Distro:${normal} ${distro}${normal}"
 kernelText="${textColor}Kernel:${normal} ${kernel}${normal}"
 uptimeText="${textColor}Uptime:${normal} ${uptime}${normal}"
-ipText="${textColor}IP Address:${normal} ${ip}${normal}"
+if [ "${opt_offline}" = f ]; then
+    ipText="${textColor}IP Address:${normal} ${ip}${normal}"
+fi
 shellText="${textColor}Shell:${normal} ${shell}${normal}"
 terminalText="${textColor}Terminal:${normal} ${terminal}${normal}"
 packagehandlerText="${textColor}Packages:${normal} ${packagehandler}${normal}"
