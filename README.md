@@ -40,6 +40,7 @@ brew install archey
 * -b,  --nocolor : Use black & white logo
 * -c,  --color   : Force using a color Logo
 * -m,  --macports : Use MacPorts instead of Homebrew to display package count
+* -o   --offline Disable the IP address check
 * -h,  --help : Show help
 
 
