@@ -10,6 +10,8 @@
 
 **Merged pull requests:**
 
+- Adding an array list. [\#28](https://github.com/obihann/archey-osx/pull/28) ([slice27](https://github.com/slice27))
+- updating changelog [\#26](https://github.com/obihann/archey-osx/pull/26) ([obihann](https://github.com/obihann))
 - Adding offline mode [\#25](https://github.com/obihann/archey-osx/pull/25) ([obihann](https://github.com/obihann))
 - Fixing uptime [\#24](https://github.com/obihann/archey-osx/pull/24) ([obihann](https://github.com/obihann))
 - Configure logo file location via $ARCHEY\_LOGO\_FILE [\#22](https://github.com/obihann/archey-osx/pull/22) ([theunraveler](https://github.com/theunraveler))
