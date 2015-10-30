@@ -55,7 +55,15 @@ user=$(whoami)
 hostname=$(hostname | sed 's/.local//g')
 
 if [[ "${opt_offline}" = f ]]; then
-    ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+    ipfile="${HOME}/.archey-ip"
+    if [ -a "$ipfile" ] && test `find "$ipfile" -mmin -360`; then
+        while read -r line; do
+            ip="$line"
+        done < "$ipfile"
+    else
+        ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+        echo $ip > "$ipfile"
+    fi
 fi
 
 distro="OS X $(sw_vers -productVersion)"
