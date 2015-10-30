@@ -7,9 +7,13 @@
 **Fixed bugs:**
 
 - Why my uptime string length is so long? [\#18](https://github.com/obihann/archey-osx/issues/18)
+- 1.5 IP timeout & Battery [\#17](https://github.com/obihann/archey-osx/issues/17)
 
 **Merged pull requests:**
 
+- ip address caching [\#31](https://github.com/obihann/archey-osx/pull/31) ([obihann](https://github.com/obihann))
+- Develop [\#30](https://github.com/obihann/archey-osx/pull/30) ([obihann](https://github.com/obihann))
+- adding check if battery string is empty [\#29](https://github.com/obihann/archey-osx/pull/29) ([obihann](https://github.com/obihann))
 - Adding an array list. [\#28](https://github.com/obihann/archey-osx/pull/28) ([slice27](https://github.com/slice27))
 - updating changelog [\#26](https://github.com/obihann/archey-osx/pull/26) ([obihann](https://github.com/obihann))
 - Adding offline mode [\#25](https://github.com/obihann/archey-osx/pull/25) ([obihann](https://github.com/obihann))
