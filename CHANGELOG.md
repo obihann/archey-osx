@@ -1,16 +1,24 @@
 # Change Log
 
-## [Unreleased](https://github.com/obihann/archey-osx/tree/HEAD)
+## [1.5.1](https://github.com/obihann/archey-osx/tree/1.5.1) (2015-11-03)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.5-pr...1.5.1)
 
-[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.5...HEAD)
+**Closed issues:**
+
+- Download link in Readme.md returns 404 Not Found [\#33](https://github.com/obihann/archey-osx/issues/33)
+
+## [1.5.1-pr](https://github.com/obihann/archey-osx/tree/1.5.1-pr) (2015-11-03)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.5...1.5.1-pr)
 
 **Fixed bugs:**
 
+- New Version [\#19](https://github.com/obihann/archey-osx/issues/19)
 - Why my uptime string length is so long? [\#18](https://github.com/obihann/archey-osx/issues/18)
 - 1.5 IP timeout & Battery [\#17](https://github.com/obihann/archey-osx/issues/17)
 
 **Merged pull requests:**
 
+- prepping for v1.5.1 [\#32](https://github.com/obihann/archey-osx/pull/32) ([obihann](https://github.com/obihann))
 - ip address caching [\#31](https://github.com/obihann/archey-osx/pull/31) ([obihann](https://github.com/obihann))
 - Develop [\#30](https://github.com/obihann/archey-osx/pull/30) ([obihann](https://github.com/obihann))
 - adding check if battery string is empty [\#29](https://github.com/obihann/archey-osx/pull/29) ([obihann](https://github.com/obihann))
