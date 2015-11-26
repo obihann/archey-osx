@@ -2,20 +2,19 @@
 An archey script for OS X.
 
 ```
-
-                 ###
-               ####                   User: jhann
-               ###                    Hostname: Hann
-       #######    #######             Distro: OS X 10.8.4
-     ######################           Kernel: Darwin
-    #####################             Uptime:  2:03
-    ####################              Shell: /bin/bash
-    ####################              Terminal: xterm
-    #####################             Packages: 70
-     ######################           CPU: Intel Core i5-3210M CPU @ 2.50GHz
-      ####################            Memory: 8 GB
-        ################              Disk: 56%
-         ####     #####               IP Address: 192.168.0.2
+                 ###                  User: jhann
+               ####                   Hostname: obihann
+               ###                    Distro: OS X 10.10.5
+       #######    #######             Kernel: Darwin
+     ######################           Uptime:  6:11
+    #####################             Shell: /bin/zsh
+    ####################              Terminal: xterm-256color iTerm.app
+    ####################              Packages: 114
+    #####################             CPU: Intel Core i5-3210M CPU @ 2.50GHz
+     ######################           Memory: 8 GB
+      ####################            Disk: 95%
+        ################              Battery: 100.00%
+         ####     #####               IP Address: 24.222.18.26
 ```
 
 ##Table Of Contents
@@ -26,7 +25,7 @@ An archey script for OS X.
 * [License](#license)
 
 ##Download
-The latest stable release is [1.5](https://github.com/obihann/archey-osx/archive/1.5.tar.gz).
+The latest stable release is [1.5.1](https://github.com/obihann/archey-osx/archive/1.5.1.tar.gz).
 
 ##Installation
 To get started you will need [homebrew](http://brew.sh/) to manage packages such as Python, figlet, and cowsay. To install please run the following command:
@@ -58,4 +57,4 @@ brew install archey
 
 This tool is protected by the [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html).
 
-Copyright [Jeffrey Hann](http://jeffreyhann.ca/) 2013,2014
+Copyright [Jeffrey Hann](http://jeffreyhann.ca/) 2015
