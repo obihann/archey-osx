@@ -1,14 +1,15 @@
 # Change Log
 
+## [Unreleased](https://github.com/obihann/archey-osx/tree/HEAD)
+
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.1...HEAD)
+
+**Merged pull requests:**
+
+- Performance improvements [\#34](https://github.com/obihann/archey-osx/pull/34) ([childnode](https://github.com/childnode))
+
 ## [1.5.1](https://github.com/obihann/archey-osx/tree/1.5.1) (2015-11-03)
-[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.5-pr...1.5.1)
-
-**Closed issues:**
-
-- Download link in Readme.md returns 404 Not Found [\#33](https://github.com/obihann/archey-osx/issues/33)
-
-## [1.5.1-pr](https://github.com/obihann/archey-osx/tree/1.5.1-pr) (2015-11-03)
-[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.5...1.5.1-pr)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.1-pr...1.5.1)
 
 **Fixed bugs:**
 
@@ -16,21 +17,31 @@
 - Why my uptime string length is so long? [\#18](https://github.com/obihann/archey-osx/issues/18)
 - 1.5 IP timeout & Battery [\#17](https://github.com/obihann/archey-osx/issues/17)
 
+**Closed issues:**
+
+- Download link in Readme.md returns 404 Not Found [\#33](https://github.com/obihann/archey-osx/issues/33)
+
 **Merged pull requests:**
 
 - prepping for v1.5.1 [\#32](https://github.com/obihann/archey-osx/pull/32) ([obihann](https://github.com/obihann))
 - ip address caching [\#31](https://github.com/obihann/archey-osx/pull/31) ([obihann](https://github.com/obihann))
+- Fixing uptime [\#24](https://github.com/obihann/archey-osx/pull/24) ([obihann](https://github.com/obihann))
+- updating the regex used to display uptime [\#21](https://github.com/obihann/archey-osx/pull/21) ([obihann](https://github.com/obihann))
+
+## [1.5.1-pr](https://github.com/obihann/archey-osx/tree/1.5.1-pr) (2015-11-03)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.5...1.5.1-pr)
+
+**Merged pull requests:**
+
 - Develop [\#30](https://github.com/obihann/archey-osx/pull/30) ([obihann](https://github.com/obihann))
 - adding check if battery string is empty [\#29](https://github.com/obihann/archey-osx/pull/29) ([obihann](https://github.com/obihann))
 - Adding an array list. [\#28](https://github.com/obihann/archey-osx/pull/28) ([slice27](https://github.com/slice27))
 - updating changelog [\#26](https://github.com/obihann/archey-osx/pull/26) ([obihann](https://github.com/obihann))
 - Adding offline mode [\#25](https://github.com/obihann/archey-osx/pull/25) ([obihann](https://github.com/obihann))
-- Fixing uptime [\#24](https://github.com/obihann/archey-osx/pull/24) ([obihann](https://github.com/obihann))
 - Configure logo file location via $ARCHEY\_LOGO\_FILE [\#22](https://github.com/obihann/archey-osx/pull/22) ([theunraveler](https://github.com/theunraveler))
-- updating the regex used to display uptime [\#21](https://github.com/obihann/archey-osx/pull/21) ([obihann](https://github.com/obihann))
 
 ## [v1.5](https://github.com/obihann/archey-osx/tree/v1.5) (2015-10-06)
-[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.4...v1.5)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.4...v1.5)
 
 **Merged pull requests:**
 
@@ -43,11 +54,11 @@
 - Simplified ram calculation. [\#5](https://github.com/obihann/archey-osx/pull/5) ([docwhat](https://github.com/docwhat))
 - Get user's shell from dscl. [\#3](https://github.com/obihann/archey-osx/pull/3) ([lucsky](https://github.com/lucsky))
 
-## [v1.4](https://github.com/obihann/archey-osx/tree/v1.4) (2014-03-09)
-[Full Changelog](https://github.com/obihann/archey-osx/compare/1.4...v1.4)
-
 ## [1.4](https://github.com/obihann/archey-osx/tree/1.4) (2014-03-09)
-[Full Changelog](https://github.com/obihann/archey-osx/compare/1.3...1.4)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/v1.4...1.4)
+
+## [v1.4](https://github.com/obihann/archey-osx/tree/v1.4) (2014-03-09)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.3...v1.4)
 
 ## [1.3](https://github.com/obihann/archey-osx/tree/1.3) (2014-02-07)
 [Full Changelog](https://github.com/obihann/archey-osx/compare/1.2...1.3)
