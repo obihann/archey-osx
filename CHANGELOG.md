@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.5.2](https://github.com/obihann/archey-osx/tree/1.5.2)
+
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.2-pr...1.5.2)
+
+**Closed issues:**
+
+- prep for 1.5.2 [\#37](https://github.com/obihann/archey-osx/issues/37)
+
 ## [1.5.2-pr](https://github.com/obihann/archey-osx/tree/1.5.2-pr) (2015-11-26)
 [Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.1...1.5.2-pr)
 
