@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# archey-osx 1.5.3 (https://github.com/obihann/archey-osx/)
+
 # test to see if bash supports arrays
 arraytest[0]='test' || (echo 'Error: Arrays are not supported in this version of
 bash.' && exit 2)
@@ -37,6 +39,8 @@ do
         opt_offline=t
       ;;
     -h|--help)
+      echo "Archey OS X 1.5.3"
+      echo
       echo "Usage: $0 [options]"
       echo
       echo "  -p --packager  Use auto detected package system (default packager: ${detectedpackager})."
@@ -76,7 +80,7 @@ uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 shell="$SHELL"
 terminal="$TERM ${TERM_PROGRAM//_/ }"
 cpu=$(sysctl -n machdep.cpu.brand_string)
-battery=$(ioreg -c AppleSmartBattery -r | awk '$1~/Capacity/{c[$1]=$3} END{OFMT="%.2f%%"; max=c["\"MaxCapacity\""]; print (max>0? 100*c["\"CurrentCapacity\""]/max: "?")}')
+battery=$(ioreg -c AppleSmartBattery -r | awk '$1~/Capacity/{c[$1]=$3} END{OFMT="%.2f%%"; max=c["\"MaxCapacity\""]; if (max>0) { print 100*c["\"CurrentCapacity\""]/max;} }')
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
 cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
