@@ -69,7 +69,7 @@ if [[ "${opt_offline}" = f ]]; then
             ip="$line"
         done < "$ipfile"
     else
-        ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+        ip=$(curl -sS eth0.me)
         echo $ip > "$ipfile"
     fi
 fi
