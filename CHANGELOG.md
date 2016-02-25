@@ -1,20 +1,29 @@
 # Change Log
 
-## [1.5.2](https://github.com/obihann/archey-osx/tree/1.5.2)
+## [Unreleased](https://github.com/obihann/archey-osx/tree/HEAD)
 
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.2...HEAD)
+
+**Merged pull requests:**
+
+- Fixes \#42. [\#47](https://github.com/obihann/archey-osx/pull/47) ([sashkab](https://github.com/sashkab))
+- Remove dependency on outbound DNS [\#46](https://github.com/obihann/archey-osx/pull/46) ([tduzan](https://github.com/tduzan))
+- fixed bug \#38 caused by pr \#34 [\#39](https://github.com/obihann/archey-osx/pull/39) ([childnode](https://github.com/childnode))
+
+## [1.5.2](https://github.com/obihann/archey-osx/tree/1.5.2) (2015-11-26)
 [Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.2-pr...1.5.2)
 
 **Closed issues:**
 
 - prep for 1.5.2 [\#37](https://github.com/obihann/archey-osx/issues/37)
 
-## [1.5.2-pr](https://github.com/obihann/archey-osx/tree/1.5.2-pr) (2015-11-26)
-[Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.1...1.5.2-pr)
-
 **Merged pull requests:**
 
 - Prepping for 1.5.2 [\#36](https://github.com/obihann/archey-osx/pull/36) ([obihann](https://github.com/obihann))
 - Performance improvements [\#34](https://github.com/obihann/archey-osx/pull/34) ([childnode](https://github.com/childnode))
+
+## [1.5.2-pr](https://github.com/obihann/archey-osx/tree/1.5.2-pr) (2015-11-26)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.1...1.5.2-pr)
 
 ## [1.5.1](https://github.com/obihann/archey-osx/tree/1.5.1) (2015-11-03)
 [Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.1-pr...1.5.1)

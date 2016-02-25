@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# archey-osx 1.5.2 (https://github.com/obihann/archey-osx/)
+# archey-osx 1.6.0 (https://github.com/obihann/archey-osx/)
 
 # test to see if bash supports arrays
 arraytest[0]='test' || (echo 'Error: Arrays are not supported in this version of
@@ -39,7 +39,7 @@ do
         opt_offline=t
       ;;
     -h|--help)
-      echo "Archey OS X 1.5.2"
+      echo "Archey OS X 1.6.0"
       echo
       echo "Usage: $0 [options]"
       echo
@@ -47,7 +47,7 @@ do
       echo "  -m --macports  Force use MacPorts as package system."
       echo "  -b --nocolor   Turn color off."
       echo "  -c --color     Force the color on (overrides --nocolor)."
-      echo "  -o --offline Disable the IP address check."
+      echo "  -o --offline   Disable the IP address check."
       exit 0
       ;;
     *)
@@ -69,7 +69,7 @@ if [[ "${opt_offline}" = f ]]; then
             ip="$line"
         done < "$ipfile"
     else
-        ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+        ip=$(curl -sS eth0.me)
         echo $ip > "$ipfile"
     fi
 fi
@@ -80,7 +80,7 @@ uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 shell="$SHELL"
 terminal="$TERM ${TERM_PROGRAM//_/ }"
 cpu=$(sysctl -n machdep.cpu.brand_string)
-battery=$(ioreg -c AppleSmartBattery -r | awk '$1~/Capacity/{c[$1]=$3} END{OFMT="%.2f%%"; max=c["\"MaxCapacity\""]; print (max>0? 100*c["\"CurrentCapacity\""]/max: "?")}')
+battery=$(ioreg -c AppleSmartBattery -r | awk '$1~/Capacity/{c[$1]=$3} END{OFMT="%.2f%%"; max=c["\"MaxCapacity\""]; if (max>0) { print 100*c["\"CurrentCapacity\""]/max;} }')
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
 cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
@@ -129,8 +129,8 @@ fi
 fieldlist[${#fieldlist[@]}]="${textColor}CPU:${normal} ${cpu}${normal}"
 fieldlist[${#fieldlist[@]}]="${textColor}Memory:${normal} ${ram}${normal}"
 fieldlist[${#fieldlist[@]}]="${textColor}Disk:${normal} ${disk}${normal}"
-if [ ! -z $battery ]; then
-    fieldlist[${#fieldlist[@]}]="${textColor}Battery:${normal} ${battery}${normal}"
+if [[ ! -z $battery ]]; then
+    fieldlist[${#fieldlist[@]}]="${textColor}Battery:${normal} ${battery}${normal}%"
 fi
 if [ "${opt_offline}" = f ]; then
     fieldlist[${#fieldlist[@]}]="${textColor}IP Address:${normal} ${ip}${normal}"
