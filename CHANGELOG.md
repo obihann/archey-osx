@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/obihann/archey-osx/tree/HEAD)
-
-[Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.2...HEAD)
+## [1.6.0-pr](https://github.com/obihann/archey-osx/tree/1.6.0-pr) (2016-02-25)
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.2...1.6.0-pr)
 
 **Fixed bugs:**
 
