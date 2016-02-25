@@ -4,8 +4,16 @@
 
 [Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.2...HEAD)
 
+**Fixed bugs:**
+
+- archey help misalignment [\#45](https://github.com/obihann/archey-osx/issues/45)
+- \[1.5.2\] binary operator expected [\#42](https://github.com/obihann/archey-osx/issues/42)
+- can not get IP and buttery info use `archey -c` or `archey -c -o` [\#41](https://github.com/obihann/archey-osx/issues/41)
+- 🔋❓ [\#38](https://github.com/obihann/archey-osx/issues/38)
+
 **Merged pull requests:**
 
+- Develop [\#48](https://github.com/obihann/archey-osx/pull/48) ([obihann](https://github.com/obihann))
 - Fixes \#42. [\#47](https://github.com/obihann/archey-osx/pull/47) ([sashkab](https://github.com/sashkab))
 - Remove dependency on outbound DNS [\#46](https://github.com/obihann/archey-osx/pull/46) ([tduzan](https://github.com/tduzan))
 - fixed bug \#38 caused by pr \#34 [\#39](https://github.com/obihann/archey-osx/pull/39) ([childnode](https://github.com/childnode))
