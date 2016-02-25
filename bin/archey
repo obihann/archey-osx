@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# archey-osx 1.5.3 (https://github.com/obihann/archey-osx/)
+# archey-osx 1.6.0 (https://github.com/obihann/archey-osx/)
 
 # test to see if bash supports arrays
 arraytest[0]='test' || (echo 'Error: Arrays are not supported in this version of
@@ -39,7 +39,7 @@ do
         opt_offline=t
       ;;
     -h|--help)
-      echo "Archey OS X 1.5.3"
+      echo "Archey OS X 1.6.0"
       echo
       echo "Usage: $0 [options]"
       echo
