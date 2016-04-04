@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/obihann/archey-osx/tree/HEAD)
+
+[Full Changelog](https://github.com/obihann/archey-osx/compare/1.6.0-pr...HEAD)
+
+**Merged pull requests:**
+
+- Updated usage options in index.html from README.md [\#49](https://github.com/obihann/archey-osx/pull/49) ([aakashjog](https://github.com/aakashjog))
+
 ## [1.6.0-pr](https://github.com/obihann/archey-osx/tree/1.6.0-pr) (2016-02-25)
 [Full Changelog](https://github.com/obihann/archey-osx/compare/1.5.2...1.6.0-pr)
 
