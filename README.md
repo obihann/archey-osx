@@ -25,7 +25,7 @@ An archey script for OS X.
 * [License](#license)
 
 ##Download
-The latest stable release is [1.5.2](https://github.com/obihann/archey-osx/archive/1.5.2.tar.gz).
+The latest stable release is [1.6.0](https://github.com/obihann/archey-osx/archive/1.6.0.tar.gz).
 
 ##Installation
 To get started you will need [homebrew](http://brew.sh/) to manage packages such as Python, figlet, and cowsay. To install please run the following command:
@@ -35,7 +35,6 @@ brew install archey
 ```
 
 ##Options
-------------
 * -b,  --nocolor : Use black & white logo
 * -c,  --color   : Force using a color Logo
 * -m,  --macports : Use MacPorts instead of Homebrew to display package count
@@ -44,7 +43,6 @@ brew install archey
 
 
 ##Credits
-------
 * [djmelik](https://github.com/djmelik/archey) - Archey
 * [joshfinnie](https://github.com/joshfinnie/archey-osx) - A great OSX Python port of Archey
 * [Gary00](https://github.com/Gary00/archey-osx) - A fork of joshfinnie's Archey port, and the base of this script.
@@ -54,7 +52,6 @@ brew install archey
 * [vladshub](https://github.com/vladshub) - Custom logo support
 
 ##License
-
 This tool is protected by the [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html).
 
-Copyright [Jeffrey Hann](http://jeffreyhann.ca/) 2015
+Copyright [Jeffrey Hann](http://jeffreyhann.ca/) 2016
