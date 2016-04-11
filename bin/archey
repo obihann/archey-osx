@@ -76,7 +76,7 @@ fi
 
 distro="OS X $(sw_vers -productVersion)"
 kernel=$(uname)
-uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
+uptime=$(uptime | sed -e 's/.*up //' -e 's/, [0-9]* user.*//')
 shell="$SHELL"
 terminal="$TERM ${TERM_PROGRAM//_/ }"
 cpu=$(sysctl -n machdep.cpu.brand_string)
