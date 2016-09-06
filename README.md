@@ -38,7 +38,8 @@ brew install archey
 * -b,  --nocolor : Use black & white logo
 * -c,  --color   : Force using a color Logo
 * -m,  --macports : Use MacPorts instead of Homebrew to display package count
-* -o   --offline Disable the IP address check
+* -o   --offline : Disable the IP address check
+* -l   --localip : Show the local IP address associated with the default adapter
 * -h,  --help : Show help
 
 
