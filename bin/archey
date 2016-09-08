@@ -37,6 +37,9 @@ do
       ;;
     -o|--offline)
         opt_offline=t
+        ;;
+    -l|--localip)
+		opt_localip=t
       ;;
     -h|--help)
       echo "Archey OS X 1.6.0"
@@ -48,6 +51,7 @@ do
       echo "  -b --nocolor   Turn color off."
       echo "  -c --color     Force the color on (overrides --nocolor)."
       echo "  -o --offline   Disable the IP address check."
+      echo "  -l --localip   Show local IP adddress"
       exit 0
       ;;
     *)
@@ -72,6 +76,13 @@ if [[ "${opt_offline}" = f ]]; then
         ip=$(curl -sS eth0.me)
         echo $ip > "$ipfile"
     fi
+fi
+
+if [[ "${opt_localip}" = t ]]; then
+	# Get the interface used for the default route
+	activeadapter=$(route -n get 0.0.0.0 | awk '/interface: / {print $2}')
+	# Now get the IP address assigned to that interface
+	localip=$(ifconfig ${activeadapter} | awk '/inet / {print $2}')
 fi
 
 distro="OS X $(sw_vers -productVersion)"
@@ -134,6 +145,9 @@ if [[ ! -z $battery ]]; then
 fi
 if [ "${opt_offline}" = f ]; then
     fieldlist[${#fieldlist[@]}]="${textColor}IP Address:${normal} ${ip}${normal}"
+fi
+if [ "${opt_localip}" = t ]; then
+	fieldlist[${#fieldlist[@]}]="${textColor}Local IP:${normal} ${localip}${normal}"
 fi
 
 logofile=${ARCHEY_LOGO_FILE:-"${HOME}/.config/archey-logo"}
