@@ -141,7 +141,7 @@ fieldlist[${#fieldlist[@]}]="${textColor}CPU:${normal} ${cpu}${normal}"
 fieldlist[${#fieldlist[@]}]="${textColor}Memory:${normal} ${ram}${normal}"
 fieldlist[${#fieldlist[@]}]="${textColor}Disk:${normal} ${disk}${normal}"
 if [[ ! -z $battery ]]; then
-    fieldlist[${#fieldlist[@]}]="${textColor}Battery:${normal} ${battery}${normal}%"
+    fieldlist[${#fieldlist[@]}]="${textColor}Battery:${normal} ${battery}${normal}"
 fi
 if [ "${opt_offline}" = f ]; then
     fieldlist[${#fieldlist[@]}]="${textColor}IP Address:${normal} ${ip}${normal}"
